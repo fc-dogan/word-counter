@@ -12,14 +12,14 @@ namespace WordCounter.Tests
       Counter newCounter = new Counter();
       Assert.AreEqual(typeof(Counter), newCounter.GetType());
     }
-    // [TestMethod]
-    // public void GetSentence_ReturnSentence_String()
-    // {
-    //   string sentence = "this is a test sentence";
-    //   Counter newCounter = new Counter(sentence);
-    //   string result = newCounter.Sentence;
-    //   Assert.AreEqual(sentence, result);
-    // }
+    [TestMethod]
+    public void GetSentence_ReturnSentence_String()
+    {
+      string sentence = "this is a test sentence";
+      Counter newCounter = new Counter(sentence);
+      string result = newCounter.Sentence;
+      Assert.AreEqual(sentence, result);
+    }
     
   }
 }// public void Counter_ReturnsList_List()
