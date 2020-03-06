@@ -1,4 +1,5 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System;
 using WordCounter.Models;
 
 namespace WordCounter.Tests
@@ -60,9 +61,10 @@ namespace WordCounter.Tests
       string word = "cat";
       string sentence = "I have a white cat.";
       Counter newCounter = new Counter(word, sentence);
+      string input = newCounter.Sentence;
       string[] splitSent = sentence.Split(" ");
-      string[] result = SplitSentence(newCounter.Sentence);
-      Assert.AreEqual(result, splitSent);
+      string[] result = newCounter.SplitSentence(input);
+      CollectionAssert.AreEqual(result, splitSent);
       
     }
     

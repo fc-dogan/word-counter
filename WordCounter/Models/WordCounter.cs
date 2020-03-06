@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+
 namespace WordCounter.Models
 {
   public class Counter 
@@ -10,6 +13,12 @@ namespace WordCounter.Models
     {
       Word = word;
       Sentence = sentence;
+    }
+
+    public string[] SplitSentence(string sentence)
+    {
+      string[] sentenceArray = sentence.Split(" ");
+      return sentenceArray;
     }
     
 
