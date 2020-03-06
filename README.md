@@ -59,7 +59,6 @@ _No known bugs at this time._
 * C#
 * .Net Core 2.2
 
-
 ### License
 
 [MIT](https://choosealicense.com/licenses/mit/)
