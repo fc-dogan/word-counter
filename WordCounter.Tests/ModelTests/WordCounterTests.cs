@@ -21,6 +21,7 @@ namespace WordCounter.Tests
       string result = newCounter.Sentence;
       Assert.AreEqual(sentence, result);
     }
+    [TestMethod]
     public void GetWord_ReturnWord_String()
     {
       string word ="test";
@@ -28,6 +29,18 @@ namespace WordCounter.Tests
       Counter newCounter = new Counter(word, sentence);
       string result = newCounter.Word;
       Assert.AreEqual(word, result);
+    }
+
+    [TestMethod]
+    public void SetSentence_SetSentence_String()
+    {
+      string sentence = "this is a test sentence";
+      string word ="test";
+      Counter newCounter = new Counter(word,sentence);
+      string updatedSentence = "new sentence";
+      newCounter.Sentence = updatedSentence;
+      string result = newCounter.Sentence;
+      Assert.AreEqual(updatedSentence, result);
     }
     
   }
