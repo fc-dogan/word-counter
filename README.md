@@ -11,12 +11,13 @@ A program that gathers both a word and sentence from a user, then checks how fre
 ## Project Specifications
 
 | Behavior | Input | Output |
-|---|:---:|:---:|
+|---|:---|:---:|
 |The program gathers a word from user | cat | |
 |The program gathers a sentences from user | I have a white cat | |
 |The program checks how frequently the word appears in sentences | word: "cat" <br>sentence: "I have a white cat" | 1 |
 |The program counts for full word matches only | word: "cat" <br>sentence: "I'm walking to the cathedral" | 0 |
-
+|The program is not case sensitive | word: "the" <br>sentence: "The cat jumped over the wall" | 2 |
+|The program ignores to punctuation |  word: "cat" <br>sentence: "I have a white cat." | 1 |
 
 
 
