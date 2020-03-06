@@ -42,6 +42,17 @@ namespace WordCounter.Tests
       string result = newCounter.Sentence;
       Assert.AreEqual(updatedSentence, result);
     }
+    [TestMethod]
+    public void SetWord_SetWord_String()
+    {
+      string word ="test";
+      string sentence = "this is a test sentence";
+      Counter newCounter = new Counter(word, sentence);
+      string updateWord = "new";
+      newCounter.Word =updatedWord;
+      string result = newCounter.Word;
+      Assert.AreEqual(updateWord, result);
+    }
     
   }
 }
