@@ -83,7 +83,7 @@ namespace WordCounter.Tests
     [TestMethod]
     public void GetAll_ReturnWords_List()
     {
-      
+      string word = "cat";
       string sentence = "white cat";
       Counter newCounter = new Counter(word, sentence);
       newCounter.SplitSentence(sentence);
