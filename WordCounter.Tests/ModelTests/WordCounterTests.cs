@@ -7,7 +7,7 @@ namespace WordCounter.Tests
   public class CounterTest
   {
     [TestMethod]
-    public void CounterConstructor_CreatesInstanceOfCounter_Counter()
+    public void Counter_CreatesInstanceOfCounter_Counter()
     {
       Counter newCounter = new Counter();
       Assert.AreEqual(typeof(Counter), newCounter.GetType());
