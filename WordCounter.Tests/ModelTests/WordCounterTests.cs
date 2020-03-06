@@ -48,10 +48,10 @@ namespace WordCounter.Tests
       string word ="test";
       string sentence = "this is a test sentence";
       Counter newCounter = new Counter(word, sentence);
-      string updateWord = "new";
+      string updatedWord = "new";
       newCounter.Word =updatedWord;
       string result = newCounter.Word;
-      Assert.AreEqual(updateWord, result);
+      Assert.AreEqual(updatedWord, result);
     }
     
   }
