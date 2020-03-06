@@ -9,14 +9,15 @@ namespace WordCounter.Tests
     [TestMethod]
     public void Counter_CreatesInstanceOfCounter_Counter()
     {
-      Counter newCounter = new Counter("this is a test sentence");
+      Counter newCounter = new Counter("test", "this is a test sentence");
       Assert.AreEqual(typeof(Counter), newCounter.GetType());
     }
     [TestMethod]
     public void GetSentence_ReturnSentence_String()
     {
       string sentence = "this is a test sentence";
-      Counter newCounter = new Counter(sentence);
+      string word ="test";
+      Counter newCounter = new Counter(word,sentence);
       string result = newCounter.Sentence;
       Assert.AreEqual(sentence, result);
     }
@@ -30,7 +31,8 @@ namespace WordCounter.Tests
     }
     
   }
-}// public void Counter_ReturnsList_List()
+}
+// public void Counter_ReturnsList_List()
     // {
     //   List<string> compare = new List<string> {};
     //   Counter newCounter = new Counter("test", "this is a test sentence");
