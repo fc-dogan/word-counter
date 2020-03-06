@@ -1,12 +1,18 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using WordCounter.Models;
 
 namespace WordCounter.Tests
 {
   [TestClass]
-  public class CounterTest
+  public class CounterTest : IDisposable
   {
+    public void Dispose()
+    {
+      Counter.ClearAll();
+    }
+    
     [TestMethod]
     public void Counter_CreatesInstanceOfCounter_Counter()
     {
@@ -70,6 +76,9 @@ namespace WordCounter.Tests
     [TestMethod]
     public void GetAll_ReturnsEmptyList_List()
     {
+      // string word = "cat";
+      // string sentence = "I have a white cat.";
+      // Counter newCounter = new Counter(word, sentence);
       List<string> newList = new List<string>{};
       List<string> result = Counter.GetAll();
       CollectionAssert.AreEqual(newList, result);

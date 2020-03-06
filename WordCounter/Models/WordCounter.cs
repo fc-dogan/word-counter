@@ -27,9 +27,13 @@ namespace WordCounter.Models
 
     public static List<string> GetAll()
     {
-
+      return WordsInSentence;
     }
-    
+    public static void ClearAll()
+    {
+      WordsInSentence.Clear();
+    }
+
     // public int CheckWord(string word , string sentence)
     // {
     //   int count = 0;
