@@ -68,14 +68,23 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void CheckWord_InputtedWordAppearsInTheSentence_True()
+    public void GetAll_ReturnsEmptyList_List()
     {
-      string word = "cat";
-      string sentence = "I have a white cat.";
-      Counter newCounter = new Counter(word, sentence);
-      bool result =newCounter.CheckWord();
-      Assert.AreEqual(result, true);
+      List<string> newList = new List<string>{};
+      List<string> result = Counter.GetAll();
+      CollectionAssert.AreEqual(newList, result);
     }
+
+    // [TestMethod]
+    // public void CheckWord_InputtedWordAppearsInTheSentence_Integer()
+    // {
+    //   string word = "cat";
+    //   string sentence = "I have a white cat";
+    //   Counter newCounter = new Counter(word, sentence);
+    //   int result = newCounter.CheckWord(word, sentence);
+      
+    //   Assert.AreEqual(result, 1);
+    // }
 
     
     
