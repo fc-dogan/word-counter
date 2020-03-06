@@ -54,11 +54,17 @@ namespace WordCounter.Tests
       Assert.AreEqual(updatedWord, result);
     }
     
+    [TestMethod]
+    public void SplitSentence_ConvertStringToStringArray_StringArray()
+    {
+      string word = "cat";
+      string sentence = "I have a white cat.";
+      Counter newCounter = new Counter(word, sentence);
+      string[] splitSent = sentence.Split(" ");
+      string[] result = SplitSentence(newCounter.Sentence);
+      Assert.AreEqual(result, splitSent);
+      
+    }
+    
   }
 }
-// public void Counter_ReturnsList_List()
-    // {
-    //   List<string> compare = new List<string> {};
-    //   Counter newCounter = new Counter("test", "this is a test sentence");
-      
-    // }
