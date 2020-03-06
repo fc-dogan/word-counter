@@ -9,7 +9,7 @@ namespace WordCounter.Tests
     [TestMethod]
     public void Counter_CreatesInstanceOfCounter_Counter()
     {
-      Counter newCounter = new Counter();
+      Counter newCounter = new Counter("this is a test sentence");
       Assert.AreEqual(typeof(Counter), newCounter.GetType());
     }
     [TestMethod]
