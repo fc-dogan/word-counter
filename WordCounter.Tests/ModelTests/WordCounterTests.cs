@@ -65,8 +65,19 @@ namespace WordCounter.Tests
       string[] splitSent = sentence.Split(" ");
       string[] result = newCounter.SplitSentence(input);
       CollectionAssert.AreEqual(result, splitSent);
-      
     }
+
+    [TestMethod]
+    public void CheckWord_InputtedWordAppearsInTheSentence_True()
+    {
+      string word = "cat";
+      string sentence = "I have a white cat.";
+      Counter newCounter = new Counter(word, sentence);
+      bool result =newCounter.CheckWord();
+      Assert.AreEqual(result, true);
+    }
+
+    
     
   }
 }
