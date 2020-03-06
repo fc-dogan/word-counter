@@ -12,7 +12,7 @@ namespace WordCounter.Tests
     {
       Counter.ClearAll();
     }
-    
+
     [TestMethod]
     public void Counter_CreatesInstanceOfCounter_Counter()
     {
@@ -65,7 +65,7 @@ namespace WordCounter.Tests
     public void SplitSentence_ConvertStringToStringArray_StringArray()
     {
       string word = "cat";
-      string sentence = "I have a white cat.";
+      string sentence = "I have a white cat";
       Counter newCounter = new Counter(word, sentence);
       string input = newCounter.Sentence;
       string[] splitSent = sentence.Split(" ");
@@ -76,10 +76,18 @@ namespace WordCounter.Tests
     [TestMethod]
     public void GetAll_ReturnsEmptyList_List()
     {
-      // string word = "cat";
-      // string sentence = "I have a white cat.";
-      // Counter newCounter = new Counter(word, sentence);
       List<string> newList = new List<string>{};
+      List<string> result = Counter.GetAll();
+      CollectionAssert.AreEqual(newList, result);
+    }
+    [TestMethod]
+    public void GetAll_ReturnWords_List()
+    {
+      
+      string sentence = "white cat";
+      Counter newCounter = new Counter(word, sentence);
+      newCounter.SplitSentence(sentence);
+      List<string> newList = new List<string>{"white", "cat"};
       List<string> result = Counter.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
