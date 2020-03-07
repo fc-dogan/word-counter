@@ -18,10 +18,11 @@ namespace WordCounter.Models
 
     public string[] SplitSentence(string sentence)
     {
+      char[] toTrim = {',', '.', '\'', '\"', ' ', '!', '?', ';', ':'};
       string[] sentenceArray = sentence.Split(" ");
       foreach (string currentWord in sentenceArray)
       {
-        string newWord = currentWord.ToLower();
+        string newWord = currentWord.ToLower().Trim(toTrim);
         WordsInSentence.Add(newWord);
       }
       return sentenceArray;

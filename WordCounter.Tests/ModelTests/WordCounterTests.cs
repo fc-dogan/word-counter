@@ -73,6 +73,18 @@ namespace WordCounter.Tests
       CollectionAssert.AreEqual(result, splitSent);
     }
 
+     [TestMethod]
+    public void SplitSentence_ConvertStringToStringArraAsLowerCase_StringArray()
+    {
+      string word = "cat";
+      string sentence = "I Have a White Cat";
+      Counter newCounter = new Counter(word, sentence);
+      string input = newCounter.Sentence;
+      string[] splitSent = sentence.Split(" ");
+      string[] result = newCounter.SplitSentence(input);
+      CollectionAssert.AreEqual(result, splitSent);
+    }
+
     [TestMethod]
     public void GetAll_ReturnsEmptyList_List()
     {
@@ -96,7 +108,7 @@ namespace WordCounter.Tests
     public void CheckWord_InputtedWordAppearsInTheSentence_Integer()
     {
       string word = "cat";
-      string sentence = "white cat cat cat ";
+      string sentence = "white cat";
       Counter newCounter = new Counter(word, sentence);
       newCounter.SplitSentence(sentence);
       // List<string> list = Counter.GetAll();
