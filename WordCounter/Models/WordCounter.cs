@@ -7,22 +7,27 @@ namespace WordCounter.Models
   {
     public string Sentence {get; set;}
     public string Word {get; set;}
-    public int Count {get; set;}
+    public int Count {get; set;} = 0;
     public static List<string> WordsInSentence {get; set;} = new List<string> {};
     
+    public Counter(string sentence)
+    {
+      Sentence = sentence;
+    }
+
     public Counter(string word, string sentence)
+      : this(sentence)    
     {
       Word = word;
-      Sentence = sentence;
     }
 
     public string[] SplitSentence(string sentence)
     {
-      char[] toTrim = {',', '.', '!', '?', ';', ':', '\'', '\"'};
-      string[] sentenceArray = sentence.Split(" ");
+      char[] toSplit = {' ',',', '.', '!', '?', ';', ':', '\'', '\"'};
+      string[] sentenceArray = sentence.Split(toSplit);
       foreach (string currentWord in sentenceArray)
       {
-        string newWord = currentWord.ToLower().Trim(toTrim);
+        string newWord = currentWord.ToLower();
         WordsInSentence.Add(newWord);
       }
       return sentenceArray;
@@ -41,11 +46,7 @@ namespace WordCounter.Models
       {
         if(index == word)
         {
-          Count =+1;
-        }
-        else
-        {
-          Count += 0;
+          Count += 1;
         }
       }
       return Count;
@@ -54,24 +55,6 @@ namespace WordCounter.Models
     {
       WordsInSentence.Clear();
     }
-    // public int CheckWord(string word , string sentence)
-    // {
-    //   int count = 0;
-    //   string[] sentenceArray = SplitSentence(sentence);
-    //   foreach(string input in sentenceArray)
-    //   {
-    //     if (input == word)
-    //     {
-    //       return count+= 1;
-    //     }
-    //     else
-    //     {
-    //       return count += 0;
-    //     }
-    //   }
-    //  return count;
-      
-    // }
 
 
   }

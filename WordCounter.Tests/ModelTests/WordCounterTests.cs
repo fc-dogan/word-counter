@@ -23,8 +23,7 @@ namespace WordCounter.Tests
     public void GetSentence_ReturnSentence_String()
     {
       string sentence = "this is a test sentence";
-      string word ="test";
-      Counter newCounter = new Counter(word,sentence);
+      Counter newCounter = new Counter(sentence);
       string result = newCounter.Sentence;
       Assert.AreEqual(sentence, result);
     }
@@ -42,8 +41,7 @@ namespace WordCounter.Tests
     public void SetSentence_SetSentence_String()
     {
       string sentence = "this is a test sentence";
-      string word ="test";
-      Counter newCounter = new Counter(word,sentence);
+      Counter newCounter = new Counter(sentence);
       string updatedSentence = "new sentence";
       newCounter.Sentence = updatedSentence;
       string result = newCounter.Sentence;
@@ -64,9 +62,8 @@ namespace WordCounter.Tests
     [TestMethod]
     public void SplitSentence_ConvertStringToStringArray_StringArray()
     {
-      string word = "cat";
       string sentence = "I have a white cat";
-      Counter newCounter = new Counter(word, sentence);
+      Counter newCounter = new Counter(sentence);
       string input = newCounter.Sentence;
       string[] splitSent = sentence.Split(" ");
       string[] result = newCounter.SplitSentence(input);
@@ -83,9 +80,8 @@ namespace WordCounter.Tests
     [TestMethod]
     public void GetAll_ReturnWords_List()
     {
-      string word = "cat";
       string sentence = "white cat";
-      Counter newCounter = new Counter(word, sentence);
+      Counter newCounter = new Counter(sentence);
       newCounter.SplitSentence(sentence);
       List<string> newList = new List<string>{"white", "cat"};
       List<string> result = Counter.GetAll();
@@ -93,16 +89,15 @@ namespace WordCounter.Tests
     }
 
     [TestMethod]
-    public void CheckWord_InputtedWordAppearsInTheSentence_Integer()
+    public void CheckWord_IsInputtedWordAppearsInTheSentence_Integer()
     {
       string word = "cat";
-      string sentence = "white cat";
+      string sentence = "White Cat, my cat";
       Counter newCounter = new Counter(word, sentence);
       newCounter.SplitSentence(sentence);
-      // List<string> list = Counter.GetAll();
       newCounter.CheckWord(word);
       int result = newCounter.Count;
-      Assert.AreEqual(result, 1);
+      Assert.AreEqual(result, 2);
     }
 
 
