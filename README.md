@@ -31,7 +31,7 @@ _In Terminal:_
 ```git clone https://github.com/fc-dogan/word-counter.git ```
 * Open file in your preferred text editor
 * On Mac: ```open -a {your text editor} ```
-* On Windows: ```word-counter```
+* On Windows: ``````
 
 _Download Manually:_
 
@@ -39,7 +39,7 @@ _Download Manually:_
 * Click the green "Clone or Download" button.
 * Click "Download ZIP".
 * Click downloaded file to unzip.
-* Open folder.
+* Open folder called "word-counter".
 
 
 _Note For Editors:_ 

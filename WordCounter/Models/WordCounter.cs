@@ -18,7 +18,7 @@ namespace WordCounter.Models
 
     public string[] SplitSentence(string sentence)
     {
-      char[] toTrim = {',', '.', '\'', '\"', ' ', '!', '?', ';', ':'};
+      char[] toTrim = {',', '.', '!', '?', ';', ':', '\'', '\"'};
       string[] sentenceArray = sentence.Split(" ");
       foreach (string currentWord in sentenceArray)
       {
