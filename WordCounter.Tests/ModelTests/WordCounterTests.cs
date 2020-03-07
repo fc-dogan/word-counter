@@ -99,7 +99,6 @@ namespace WordCounter.Tests
       string sentence = "white cat";
       Counter newCounter = new Counter(word, sentence);
       newCounter.SplitSentence(sentence);
-      // List<string> result = Counter.GetAll();
       int result = newCounter.CheckWord(word);
       Assert.AreEqual(result, 1);
     }

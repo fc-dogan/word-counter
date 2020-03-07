@@ -48,7 +48,7 @@ namespace WordCounter.Models
           count += 0;
         }
       }
-     
+      return count;
     }
 
     // public int CheckWord(string word , string sentence)
