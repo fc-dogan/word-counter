@@ -39,7 +39,7 @@ _Download Manually:_
 * Click the green "Clone or Download" button.
 * Click "Download ZIP".
 * Click downloaded file to unzip.
-* Open folder called "Pierre-s-Bakery".
+* Open folder.
 
 
 _Note For Editors:_ 

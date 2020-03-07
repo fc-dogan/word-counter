@@ -73,18 +73,6 @@ namespace WordCounter.Tests
       CollectionAssert.AreEqual(result, splitSent);
     }
 
-     [TestMethod]
-    public void SplitSentence_ConvertStringToStringArraAsLowerCase_StringArray()
-    {
-      string word = "cat";
-      string sentence = "I Have a White Cat";
-      Counter newCounter = new Counter(word, sentence);
-      string input = newCounter.Sentence;
-      string[] splitSent = sentence.Split(" ");
-      string[] result = newCounter.SplitSentence(input);
-      CollectionAssert.AreEqual(result, splitSent);
-    }
-
     [TestMethod]
     public void GetAll_ReturnsEmptyList_List()
     {
