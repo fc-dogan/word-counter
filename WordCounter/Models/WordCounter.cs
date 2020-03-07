@@ -34,6 +34,23 @@ namespace WordCounter.Models
       WordsInSentence.Clear();
     }
 
+    public int CheckWord(string word)
+    {
+      int count = 0;
+      foreach(string index in WordsInSentence)
+      {
+        if(index == word)
+        {
+          count =+1;
+        }
+        else
+        {
+          count += 0;
+        }
+      }
+     
+    }
+
     // public int CheckWord(string word , string sentence)
     // {
     //   int count = 0;

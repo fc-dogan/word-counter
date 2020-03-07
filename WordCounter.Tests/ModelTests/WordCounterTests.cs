@@ -92,6 +92,18 @@ namespace WordCounter.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void CheckWord_InputtedWordAppearsInTheSentence_Integer()
+    {
+      string word = "cat";
+      string sentence = "white cat";
+      Counter newCounter = new Counter(word, sentence);
+      newCounter.SplitSentence(sentence);
+      // List<string> result = Counter.GetAll();
+      int result = newCounter.CheckWord(word);
+      Assert.AreEqual(result, 1);
+    }
+
     // [TestMethod]
     // public void CheckWord_InputtedWordAppearsInTheSentence_Integer()
     // {
