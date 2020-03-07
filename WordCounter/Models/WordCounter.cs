@@ -7,6 +7,7 @@ namespace WordCounter.Models
   {
     public string Sentence {get; set;}
     public string Word {get; set;}
+    public int Count {get; set;}
     public static List<string> WordsInSentence {get; set;} = new List<string> {};
     
     public Counter(string word, string sentence)
@@ -20,7 +21,8 @@ namespace WordCounter.Models
       string[] sentenceArray = sentence.Split(" ");
       foreach (string currentWord in sentenceArray)
       {
-        WordsInSentence.Add(currentWord);
+        string newWord = currentWord.ToLower();
+        WordsInSentence.Add(newWord);
       }
       return sentenceArray;
     }
@@ -29,28 +31,28 @@ namespace WordCounter.Models
     {
       return WordsInSentence;
     }
-    public static void ClearAll()
-    {
-      WordsInSentence.Clear();
-    }
+  
 
     public int CheckWord(string word)
     {
-      int count = 0;
+     
       foreach(string index in WordsInSentence)
       {
         if(index == word)
         {
-          count =+1;
+          Count =+1;
         }
         else
         {
-          count += 0;
+          Count += 0;
         }
       }
-      return count;
+      return Count;
     }
-
+    public static void ClearAll()
+    {
+      WordsInSentence.Clear();
+    }
     // public int CheckWord(string word , string sentence)
     // {
     //   int count = 0;

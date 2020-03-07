@@ -96,12 +96,18 @@ namespace WordCounter.Tests
     public void CheckWord_InputtedWordAppearsInTheSentence_Integer()
     {
       string word = "cat";
-      string sentence = "white cat";
+      string sentence = "white cat cat cat ";
       Counter newCounter = new Counter(word, sentence);
       newCounter.SplitSentence(sentence);
-      int result = newCounter.CheckWord(word);
+      // List<string> list = Counter.GetAll();
+      newCounter.CheckWord(word);
+      int result = newCounter.Count;
       Assert.AreEqual(result, 1);
     }
+
+
+
+
 
     // [TestMethod]
     // public void CheckWord_InputtedWordAppearsInTheSentence_Integer()
