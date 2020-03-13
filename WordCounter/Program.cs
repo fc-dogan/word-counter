@@ -20,7 +20,12 @@ namespace WordCounter
       Counter newCounter = new Counter(inputtedWord, inputtedSentence);
       newCounter.SplitSentence(inputtedSentence);
       newCounter.CheckWord(inputtedWord);
-      Console.ForegroundColor = ConsoleColor.Yellow;      Console.WriteLine($"'{inputtedWord}' is found {newCounter.Count} times in '{inputtedSentence}' sentence.");
+
+      Console.WriteLine("-----------------------------"); 
+      Console.ForegroundColor = ConsoleColor.Yellow;
+      Console.WriteLine($"'{inputtedWord}' is found {newCounter.Count} times in '{inputtedSentence}' sentence.");
+      Console.ResetColor();
+      Console.WriteLine("-----------------------------"); 
       SearchAgain();
     }
 
