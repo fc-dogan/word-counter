@@ -10,7 +10,8 @@ namespace WordCounter.Tests
   {
     public void Dispose()
     {
-      Counter.ClearAll();
+      Counter newCounter = new Counter("test");
+      newCounter.ClearAll();
     }
 
     [TestMethod]
@@ -74,7 +75,8 @@ namespace WordCounter.Tests
     public void GetAll_ReturnsEmptyList_List()
     {
       List<string> newList = new List<string>{};
-      List<string> result = Counter.GetAll();
+      Counter newCounter = new Counter("test");
+      List<string> result = newCounter.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
     [TestMethod]
@@ -84,7 +86,7 @@ namespace WordCounter.Tests
       Counter newCounter = new Counter(sentence);
       newCounter.SplitSentence(sentence);
       List<string> newList = new List<string>{"white", "cat"};
-      List<string> result = Counter.GetAll();
+      List<string> result = newCounter.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
 

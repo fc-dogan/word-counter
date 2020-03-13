@@ -8,7 +8,7 @@ namespace WordCounter.Models
     public string Sentence {get; set;}
     public string Word {get; set;}
     public int Count {get; set;} = 0;
-    public static List<string> WordsInSentence {get; set;} = new List<string> {};
+    public List<string> WordsInSentence {get; set;} = new List<string> {};
     
     public Counter(string sentence)
     {
@@ -33,7 +33,7 @@ namespace WordCounter.Models
       return sentenceArray;
     }
 
-    public static List<string> GetAll()
+    public List<string> GetAll()
     {
       return WordsInSentence;
     }
@@ -51,7 +51,7 @@ namespace WordCounter.Models
       }
       return Count;
     }
-    public static void ClearAll()
+    public void ClearAll()
     {
       WordsInSentence.Clear();
     }
